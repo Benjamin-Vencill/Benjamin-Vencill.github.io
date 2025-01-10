@@ -19,6 +19,7 @@ def name_to_url(name: str) -> str:
     Given a post filename, produce it's blog url.
     """
     path = "/".join(name.split("-"))
+    path = path.replace(" ", "-")
     path = path.replace(".md", ".html")
     return f"{blog_base}/{path}"
 
