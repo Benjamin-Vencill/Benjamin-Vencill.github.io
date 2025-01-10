@@ -1,5 +1,5 @@
 # Where things are
-source                : ./garden/_posts
+source                : .
 destination           : ./garden/_site
 collections_dir       : .
 plugins_dir           : _plugins # takes an array of strings and loads plugins in that order
@@ -13,7 +13,7 @@ collections:
     output            : true
 
 # Handling Reading
-safe                  : true      # Required default by GitHub Pages
+safe                  : true  # Required default by GitHub Pages
 include               : [".htaccess"]
 exclude               : ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
 keep_files            : [".git", ".svn"]
