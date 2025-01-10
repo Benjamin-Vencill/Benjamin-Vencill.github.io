@@ -28,8 +28,8 @@ valid_backlinks = {name_to_backlink(name): name_to_url(name) for name in os.list
 print(f"Found {len(valid_backlinks.keys())} backlinks:")
 print("".join([f"{key}:{value}" for key, value in valid_backlinks.items()]))
 
-for post in os.listdir("_posts"):
-    with open(f"_posts/{post}", "r") as f:
+for post in os.listdir("_raw"):
+    with open(f"_raw/{post}", "r") as f:
         corpus = f.read()
 
     backlinks_in_corpus = re.findall(backlink_regex, corpus)
@@ -41,6 +41,7 @@ for post in os.listdir("_posts"):
             print(f"Replacing {target} with {payload}")
             corpus = corpus.replace(target, payload)
     
+    post = post.replace(".md", ".markdown")
     with open(f"_posts/{post}", "w") as f:
         f.write(corpus)
 
