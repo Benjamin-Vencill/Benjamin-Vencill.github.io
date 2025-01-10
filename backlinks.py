@@ -20,7 +20,7 @@ def name_to_url(name: str) -> str:
     """
     path = "/".join(name.split("-"))
     path = path.replace(" ", "-")
-    path = path.replace(".md", ".html")
+    path = path.replace(".markdown", ".html")
     return f"{blog_base}/{path}"
 
 valid_backlinks = {name_to_backlink(name): name_to_url(name) for name in os.listdir("_posts")}
