@@ -2,4 +2,4 @@
 
 Just Get Started is a principle which says just get started and don't worry about if it's perfect, because you're going to change it anyways and the experience from learning through failure and iteration is valueable.
 
-Backlink [Hello Garden](https://benjamin-vencill.github.io/jekyll/update/2025/01/09/Hello-Garden.html)
+Backlink [Hello Garden](https://benjamin-vencill.github.io//2025/01/09/Hello-Garden.md)

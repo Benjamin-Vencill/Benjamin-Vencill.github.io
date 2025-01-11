@@ -5,7 +5,7 @@ Process all files in `_posts/` and configure their matching backlinks
 import os
 import re
 
-blog_base = "https://benjamin-vencill.github.io/jekyll/update"
+blog_base = "https://benjamin-vencill.github.io/"
 backlink_regex = r'\[\[(.*?)\]\]'
 
 def name_to_backlink(name: str) -> str:
@@ -25,8 +25,8 @@ def name_to_url(name: str) -> str:
 
 valid_backlinks = {name_to_backlink(name): name_to_url(name) for name in os.listdir("_raw")}
 
-print(f"Found {len(valid_backlinks.keys())} backlinks:")
-print("".join([f"{key}:{value}" for key, value in valid_backlinks.items()]))
+# print(f"Found {len(valid_backlinks.keys())} backlinks:")
+# print("".join([f"{key}:{value}" for key, value in valid_backlinks.items()]))
 
 for post in os.listdir("_raw"):
     with open(f"_raw/{post}", "r") as f:
@@ -38,7 +38,6 @@ for post in os.listdir("_raw"):
         if backlink in valid_backlinks.keys():
             target = f"[[{backlink}]]"
             payload = f"[{backlink}]({valid_backlinks.get(backlink)})"
-            print(f"Replacing {target} with {payload}")
             corpus = corpus.replace(target, payload)
     
     post = post.replace(".md", ".markdown")
