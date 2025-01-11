@@ -23,8 +23,7 @@ def name_to_url(name: str) -> str:
     path = path.replace(".markdown", ".html")
     return f"{blog_base}/{path}"
 
-valid_backlinks = {name_to_backlink(name): name_to_url(name) for name in os.listdir("_posts")}
-
+valid_backlinks = {name_to_backlink(name): name_to_url(name) for name in os.listdir("_raw")}
 
 print(f"Found {len(valid_backlinks.keys())} backlinks:")
 print("".join([f"{key}:{value}" for key, value in valid_backlinks.items()]))
